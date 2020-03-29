@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load bootstrap4 %}
+{% block title %}Login | {{ block.super }}{% endblock %}
+{% block content %}
+    <form method="post" class="form-signin">
+        <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+        {% csrf_token %}
+        {% bootstrap_form form layout='inline'%}
+        <div class="checkbox mb-3">
+        </div>
+        <p><a href="{% url 'login' %}">Already Registered?</a></p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <hr>
+        <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
+    </form>
+
+{% endblock %}
