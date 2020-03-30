@@ -15,7 +15,7 @@
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link {% if askaquestion %}active{% else %}{% endif %}" href="#">
+          <a class="nav-link {% if askaquestion %}active{% else %}{% endif %}" href="{% url 'askaquestion'%}">
             <span data-feather="shopping-cart"></span>
             Ask a Question
           </a>
