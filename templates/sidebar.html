@@ -1,0 +1,26 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+    <div class="sidebar-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link {% if yourquestions %}active{% else %}{% endif %}" href="{% url 'questions'%}">
+            <span data-feather="home"></span>
+            Your Questions <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if latestquestions %}active{% else %}{% endif %}" href="{% url 'latestquestions'%}">
+            <span data-feather="file"></span>
+            Latest Questions
+          </a>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link {% if askaquestion %}active{% else %}{% endif %}" href="#">
+            <span data-feather="shopping-cart"></span>
+            Ask a Question
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>

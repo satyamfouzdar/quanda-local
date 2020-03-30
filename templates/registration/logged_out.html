@@ -2,4 +2,5 @@
 {% block title %}Logout | {{ block.super }}{% endblock %}
 {% block content %}
 <p>You have sucessfully logged out.</p>
+<a href="{% url 'login'%}">Login</a>
 {% endblock %}
