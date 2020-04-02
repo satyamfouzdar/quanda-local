@@ -1,0 +1,187 @@
+
+.profile-background-image--loading {
+    margin-top: 2rem;
+    background: url("../../img/profile-bg.jpg") 50%/cover;
+}
+.profile-background-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 25%;
+
+}
+#authors-details img {
+    float: right;
+    margin-top: -10%;
+    margin-right: 10%;
+    width: 15vw;
+    height: 15vw;
+
+    border: gray solid;
+
+}
+#authors-details .card:hover {
+    background: #3292a6;
+    color: #fff;
+}
+#authors-details .fab {
+    color: #fff;
+ }
+
+ .f-3{
+     font-size: 3rem;
+
+ }
+ .f-2{
+    font-size: 2rem;
+
+}
+.f-1{
+    font-size: 1rem;
+
+}
+.f-1_5{
+    font-size: 1.5rem;
+
+}
+.f-_5{
+    font-size: .5rem;
+    /*font-size: .5vw;
+   */
+}
+ .profile-details{
+     margin-left: 1rem;
+ }
+ .people-suggestion-img{
+    float: left;
+
+    width: 46px;
+    height: 46px;
+
+    border: gray solid;
+ }
+
+ .no-gutter.row,
+ .no-gutter.container,
+ .no-gutter.container-fluid{
+   margin-left: 1rem;
+   margin-right: 1rem  ;
+ }
+
+ .no-gutter>[class^="col-"]{
+   padding-left: 0;
+
+ }
+
+
+
+
+ /* Small devices (landscape phones) */
+@media (min-width: 576px) {
+ /*   body {
+            background: red;
+        }
+*/
+    .custom-container-profile{
+        margin-left: 0rem;
+        padding: 0rem;
+    }
+    }
+
+    /* Medium devices (tablets) */
+
+    @media (min-width: 768px) {
+     /* body {
+            background: blue
+        }
+      */
+        .custom-container-profile{
+            margin-left: 0rem;
+            padding: 0rem;
+        }
+        .f-3{
+            font-size: 2.5rem;
+
+        }
+        .f-2{
+           font-size: 1.5rem;
+
+       }
+       .f-1{
+           font-size: 1rem;
+
+       }
+       .f-1_5{
+           font-size: 1rem;
+
+       }
+       .f-_5{
+           font-size: .5rem;
+           /*font-size: .5vw;
+          */
+       }
+
+    }
+
+    /* Large devices (desktops) */
+
+    @media (min-width: 992px) {
+     /*  body {
+            background: green;
+        }
+       */
+        .custom-container-profile{
+            margin-left: 2rem;
+            padding: 0rem;
+        }
+
+    }
+
+    /* Extra large devices (large desktops) */
+
+    @media (min-width: 1200px) {
+   /*  body {
+            background: yellow;
+        }
+     */
+        .custom-container-profile{
+            margin-left: 2rem;
+            padding: 0rem;
+        }
+    }
+
+    /* The given screen size or smaller */
+
+    /* Extra small devices (portrait phones)*/
+
+    @media (max-width: 575px) {
+  /*     body {
+            background: coral;
+        }
+
+    */    .custom-container-profile{
+            margin-left: 0rem;
+            padding: 0rem;
+        }
+        .f-3{
+            font-size: 2rem;
+
+        }
+        .f-2{
+           font-size: 1rem;
+
+       }
+       .f-1{
+           font-size: .5rem;
+
+       }
+       .f-1_5{
+           font-size: 1rem;
+
+       }
+       .f-_5{
+           font-size: .5rem;
+           /*font-size: .5vw;
+          */
+       }
+
+    }
