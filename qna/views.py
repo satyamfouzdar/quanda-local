@@ -1,6 +1,5 @@
-from django.shortcuts import render, redirect
-from django.utils import timezone
-from . import models, forms
+from django.shortcuts import render
+from . import models
 
 
 def questions(request):
@@ -23,23 +22,3 @@ def latestquestions(request):
     }
 
     return render(request, 'qna/latest-questions.html', context)
-
-
-def askaquestion(request):
-    if request.method == "POST":
-        form = forms.QuestionForm(request.POST)
-        if form.is_valid():
-            question = form.save(commit=False)
-            question.author = request.user
-            question.modified_at = timezone.now()
-            question.save()
-            return redirect(questions)
-
-    else:
-        form = forms.QuestionForm()
-    context = {
-        'form': form,
-        'askaquestion': True,
-    }
-
-    return render(request, 'qna/ask-a-question.html', context)
