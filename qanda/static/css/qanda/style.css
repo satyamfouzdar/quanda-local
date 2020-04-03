@@ -1,0 +1,90 @@
+
+.container-custom{
+    margin-top: 3rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
+.align-right-custom{
+    justify-content: end;
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) {
+/*    body {
+        background: red;
+    }
+*/
+    .container-custom{
+        margin-top: 5rem;
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
+    }
+}
+
+/* Medium devices (tablets) */
+
+@media (min-width: 768px) {
+/*    body {
+        background: blue
+    }
+    */
+    .container-custom{
+        margin-top: 5rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+}
+
+/* Large devices (desktops) */
+
+@media (min-width: 992px) {
+ /*   body {
+        background: green;
+    }
+    */
+    .container-custom{
+        margin-top: 5rem;
+        margin-left: 2.5rem;
+        margin-right: 2.5rem;
+    }
+
+}
+
+/* Extra large devices (large desktops) */
+
+@media (min-width: 1200px) {
+ /*   body {
+        background: yellow;
+    }
+    */
+    .container-custom{
+        margin-top: 5rem;
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+
+
+}
+
+/* The given screen size or smaller */
+
+/* Extra small devices (portrait phones)*/
+
+@media (max-width: 575px) {
+  /*  body {
+        background: coral;
+    }
+    */
+    .container-custom{
+        margin-top: 3.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .sm-text-font{
+        font-size: inherit;
+    }
+    .btn{
+        padding: 1px;
+    }
+}

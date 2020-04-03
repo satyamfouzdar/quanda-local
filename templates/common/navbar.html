@@ -1,0 +1,125 @@
+{% load static %}
+<!--NAV BAR-->
+<nav class="navbar navbar-expand-md bg-yellow navbar-light fixed-top py-1" id="main-nav">
+        <div class="container">
+          <a href="{% url 'homepage'%}" class="navbar-brand pr-5">
+                    <img src="{% static 'img/logo.png'%}" width="40" height="30" alt="">
+             <span class="font-custom">Q & A</span>
+            </a>
+          <div class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <div class="navbar-toggler-icon"></div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form class="form-inline">
+                    <input class="form-control form-control-sm mr-sm-2 ml-sm-5" type="search" placeholder="Search" aria-label="Search">
+
+                </form>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a href="{% url 'homepage'%}" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'questions'%}" class="nav-link">Questions</a>
+              </li>
+  {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                {# <a href="login.html" class="nav-link text-primary"  data-toggle="modal" data-target="#login">login</a> #}
+                <a href="{% url 'logout'%}" class="nav-link text-primary">Logout</a>
+              </li>
+  {% else %}
+              <li class="nav-item">
+                <a href="login.html" class="nav-link text-primary"  data-toggle="modal" data-target="#login">login</a>
+              </li>
+              <li class="nav-item">
+                {# <a href="#share-head-section" class="nav-link btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#signup">Sign up</a> #}
+                <a href="{% url 'signup'%}" class="nav-link btn btn-sm btn-outline-primary">Register</a>
+
+              </li>
+  {% endif %}
+
+
+
+            </ul>
+          </div>
+
+        </div>
+      </nav>
+      <!-- Modal  login-->
+<div class="modal fade" id="login">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-yellow text-white">
+        <h5 class="modal-title">Pre-exisitng User login </h5>
+        <button class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <form>
+            <!-- TEXT FIELD GROUPS -->
+
+            <div class="form-group">
+                <label for="email">User ID or Email</label>
+                <input class="form-control " type="email"  placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+                <label for="name">Password</label>
+                <input class="form-control" type="password"  placeholder="Enter Password">
+            </div>
+
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-yellow btn-block" data-dismiss="modal"> Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal signup-->
+<div class="modal fade" id="signup">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header bg-yellow text-white">
+  <h5 class="modal-title">One step away from Being a Part of Family</h5>
+  <button class="close" data-dismiss="modal">
+    <span>&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form>
+    <form>
+      <!-- TEXT FIELD GROUPS -->
+      <div class="form-group">
+
+        <input type="hidden" name="type" value="student">
+
+          <label for="name">Name</label>
+          <input class="form-control" type="text"  placeholder="Enter name">
+      </div>
+      <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control" type="email" placeholder="Enter email">
+          <small class="form-text text-muted">Your email will not ever be shared</small>
+      </div>
+      <div class="form-group">
+          <label for="name">Password</label>
+          <input class="form-control" type="password"  placeholder="Enter Password">
+      </div>
+      <div class="form-group">
+          <label for="name">Confirm Password</label>
+          <input class="form-control" type="password"  placeholder="Confirm Password">
+      </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-yellow btn-block" data-dismiss="modal">Sign up</button>
+</div>
+</div>
+</div>
+</div>
