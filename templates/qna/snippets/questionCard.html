@@ -1,0 +1,41 @@
+<div class="card shadow">
+
+    <div class="card-header bg-light">
+        {{ instance.author | title}}
+      <!-- <a href="#" class="badge badge-primary"><span class=" badge badge-pill badge-dark">12</span> Vote</a>
+      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span> Answers</a>
+      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span>Views</a> -->
+
+      <div class="float-right d-inline">
+        <span class="text-muted" style="font-size: small;"> created on  {{ instance.created_at|date:"D d M Y" }} || {{ instance.created_at|time:"g:i a" }} || {{instance.created_at|timesince}} ago </span>
+      </div>
+
+    </div>
+      <div class="card-body">
+  <div class="row">
+    <div class="col-xl-1 col-md-1 col-sm-1 col-xs-1  pr-1">
+      <div id="vote">
+      </div>
+
+    </div>
+
+
+    <div class="col-xl-11 col-md-11 col-sm-11 col-xs-11">
+
+
+
+            <h5 class="card-title">{{ instance.title| truncatechars:60 }}</h5>
+            <p class="card-text">{{ instance.description | truncatechars:180 }}</p>
+
+            <a href="{% url 'answers' %}" class="btn btn-primary mt-3 stretched-link">See full details</a>
+
+            <blockquote class="blockquote text-right"></p>
+            <footer class="blockquote-footer" style="font-size: small;">Posted By
+              <cite title="Source Title">  {{ instance.author }}</cite>
+            </footer>
+          </blockquote>
+      </div>
+    </div>
+  </div>
+
+</div>

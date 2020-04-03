@@ -20,73 +20,8 @@
           </div>
           <div class="container-fluid">
               {% for question in questions %}
-               <!-- <div class="card">
-                  <div class="card-header">
-                    {{ question.author }}
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">{{ question.title }}</h5>
-                    <p class="card-text">{{ question.description }}</p>
-                    <a href="#" class="btn btn-primary">See full details</a>
-                  </div>
-                </div> -->
-
-
-
-                <div class="card shadow">
-
-                    <div class="card-header bg-light">
-                        {{ question.author | title}}
-                      <!-- <a href="#" class="badge badge-primary"><span class=" badge badge-pill badge-dark">12</span> Vote</a>
-                      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span> Answers</a>
-                      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span>Views</a> -->
-
-                      <div class="float-right d-inline">
-                        <span class="text-muted" style="font-size: small;">modified 9 secs ago </span>
-                      </div>
-
-                    </div>
-<div class="card-body">
-                  <div class="row">
-
-                    <div class="col-xl-1 col-md-1 col-sm-1 col-xs-1  pr-1">
-
-                      <div id="vote">
-
-                      </div>
-                        <!-- <div class="row center">
-                                <i id="increment" class="fas fa-4x fa-sort-up" onclick="increment()"></i>
-                          </div>
-                          <div class="row center">
-                          44
-                          </div>
-                          <div class="row center">
-                            <i  id="decrement" class="fas fa-4x fa-sort-down" onclick="decrement()"></i>
-                          </div> -->
-
-                    </div>
-
-
-                    <div class="col-xl-11 col-md-11 col-sm-11 col-xs-11">
-
-
-
-                            <h5 class="card-title">{{ question.title| truncatechars:60 }}</h5>
-                            <p class="card-text">{{ question.description | truncatechars:180 }}</p>
-
-                            <a href="#" class="btn btn-primary mt-3 stretched-link">See full details</a>
-
-                            <blockquote class="blockquote text-right"></p>
-                            <footer class="blockquote-footer" style="font-size: small;">Posted By
-                              <cite title="Source Title">  {{ question.author }}</cite>
-                            </footer>
-                          </blockquote>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                {% endfor %}
+                {% include "qna/snippets/questionCard.html" with instance=question %}
+              {% endfor %}
 
 
 
