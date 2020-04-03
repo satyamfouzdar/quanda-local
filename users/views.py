@@ -20,3 +20,7 @@ def signup(request):
         form = SignUpForm()
 
     return render(request, "registration/signup.html", {'form': form})
+
+def profile(request):
+
+    return render(request, 'users/profile.html', {})
