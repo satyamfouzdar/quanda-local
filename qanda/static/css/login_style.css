@@ -1,0 +1,42 @@
+body {
+  background: #343a40;
+  color: #fff; }
+
+#login-section {
+  background: url(../img/banner-4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px; }
+
+#login-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 745px;
+  background: rgba(0, 0, 0, 0.7); }
+
+#login-section .login-inner {
+  padding-top: 150px; }
+
+#login-section .card-form {
+  opacity: 0.8;
+  color: black; }
+
+#login-section .fas,
+#create-section .fas {
+  color: #efff10;
+  background: #807e7e;
+  padding: 5px;
+  border-radius: 5px; }
+
+@media (max-width: 768px) {
+  .custom {
+    padding-top: 20px; }
+
+  img {
+    width: 30%;
+    height: 30%;
+    display: block;
+    margin: 0 auto; } }
