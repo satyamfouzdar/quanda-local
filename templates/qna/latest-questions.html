@@ -21,16 +21,6 @@
         <div class="container-fluid">
           {% for question in questions %}
           {% include "qna/snippets/questionCard.html" with instance=question %}
-          <!-- <div class="card">
-              <div class="card-header">
-                {{ question.author }}
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">{{ question.title }}</h5>
-                <p class="card-text">{{ question.description }}</p>
-                <a href="#" class="btn btn-primary">See full details</a>
-              </div>
-            </div> -->
             {% endfor %}
       </div>
       </main>
