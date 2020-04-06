@@ -1,8 +1,10 @@
 {% extends 'base.html'%}
 {% load bootstrap4 %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'css/signup/signup.css' %}">{% endblock css %}
 {% block title %}Login | {{ block.super }}{% endblock %}
 {% block content %}
-    <form method="post" class="form-signin">
+    <!-- <form method="post" class="form-signin">
         <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
         {% csrf_token %}
@@ -13,6 +15,80 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         <hr>
         <p class="mt-5 mb-3 text-muted">&copy; 2020-2021</p>
-    </form>
+    </form> -->
+    <header id="signup-section">
+      <div class="dark-overlay text-light">
+        <div class="container">
+          <div class="row">
+                  <div class="col-lg-8 d-none d-lg-block">
+                    <h1 class="display-4">Build
+                      <strong>social profiles</strong> and gain revenue
+                      <strong>profits</strong>
+                    </h1>
+                    <div class="d-flex">
+                      <div class="p-4 align-self-start">
+                        <i class="fas fa-check fa-2x"></i>
+                      </div>
+                      <div class="p-4 align-self-end">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                      </div>
+                    </div>
 
+                    <div class="d-flex">
+                      <div class="p-4 align-self-start">
+                        <i class="fas fa-check fa-2x"></i>
+                      </div>
+                      <div class="p-4 align-self-end">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                      </div>
+                    </div>
+
+                    <div class="d-flex">
+                      <div class="p-4 align-self-start">
+                        <i class="fas fa-check fa-2x"></i>
+                      </div>
+                      <div class="p-4 align-self-end">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed, tempore iusto in minima facere dolorem!
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4">
+                    <div class="card text-center ">
+                      <div class="card-body">
+                        <h3>Sign Up Today</h3>
+                        <p>Please fill out this form to register</p>
+                        <form>
+                          <div class="form-group  card-form ">
+                            {{form.username}}
+                          </div>
+                          <div class="form-group card-form">
+                            {{form.first_name}}
+                          </div>
+                          <div class="form-group card-form">
+                            {{form.last_name}}
+                          </div>
+                          <div class="form-group card-form">
+                            {{form.email}}
+                          </div>
+                          <div class="form-group card-form">
+                            {{form.password1}}
+                          </div>
+                          <div class="form-group card-form">
+                            {{form.password2}}
+                          </div>
+                          <label>
+                            <input type="checkbox" value="remember-me"> Remember me
+                          </label>
+                          <p><a class="btn btn-outline-primary btn-sm" href="{% url 'login' %}">Already Registered?</a></p>
+                          <input type="submit" value="Submit" class="btn btn-outline-yellow btn-block">
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+
+      </div>
+    </header>
 {% endblock %}

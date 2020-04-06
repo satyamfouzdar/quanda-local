@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="profile-background" >
+
+                <div class="row no-gutter">
+                    <!--left side of profile-->
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 no-gutter">
+                            <!-- main editing area-->
+                            <div class=""> <div class="profile-background-image profile-background-image--loading ember-view"><!----></div></div>
+                            <div class="row" id="authors-details">
+                                <div class="col pb-3">
+
+                                    <img src= {% if profile.image %}
+                                     "{{profile.image.url}}"
+                                      {%else%}
+                                       "{%static 'img/avatar/avatar.png'%}"
+                                       {%endif%}
+                                        alt="" class="img-fluid rounded-circle ">
+                                    <div class="profile-details ml-5">
+                                        <div class="f-3 "> {{user.get_username}} </div>
+                                        <div class="f-2">B.C.A. Student at I.M.S. noida</div>
+                                        <div class="f-1">{{profile.city}}, {{profile.state}}, {{profile.country}}
+                                            &bull;
+                                            <a href="#">
+                                            <span class="badge badge-secondary">followers <span class="badge badge-primary">2.7</span></span>
+                                            </a>
+                                            &bull;
+                                            <a href="#">
+                                            <span class="badge badge-secondary">Level <span class="badge badge-primary">14</span></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!--About card-->
+                                <div class="card my-2 custom-container-profile">
+                                    <div class="card-body">
+                                    <h5 class="card-title f-1_5">About <div class="float-right"><a href=""><i class="fas fa-edit f"></i>Edit</div></a></h5>
+                                    <p class="card-text f-1">{{profile.about}}</p>
+
+                                    </div>
+                                </div>
+                            <!-- your dashboard card -->
+                            <div id="authors-dashboard" class="custom-container-profile no-gutters">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card p-5 my-2">
+                                            <div class="f-2">
+                                                Your Dashboard
+                                            </div>
+                                            <span class="text-muted">Private to you</span>
+
+                                            <div class="row">
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                    <div class="card">
+                                                        <button href=""><div class="f-2 p-2 text-primary">1 </div>
+                                                            <span class="text-monospace text-muted">Profile viewed </span>
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                    <div class="card">
+                                                        <button href=""><div class="f-2 p-2 text-primary">15 </div>
+                                                            <span class="text-monospace text-muted">Your Questions</span>
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                                                    <div class="card">
+                                                        <button href=""><div class="f-2 p-2 text-primary">1 </div>
+                                                            <span class="text-monospace text-muted">Answers</span>
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+
+                    <!--righ side of the profile-->
+                <div class="col-xl-4 col-lg-4 col-md-4" id="right-side-profile">
+                  <div class="d-sm-none d-md-block">
+                    <div class="d-md-none d-lg-block">
+                        <div class="d-none d-sm-block">
+                            <div class="d-flex flex-column row-hl">
+
+                                <div class="p-3 mb-3 item-hl text-muted">People you may know</div>
+                                <!--persons card-->
+									<div class="mb-3 item-hl btn btn-light">
+										<img src="img/temp.jpg"  class="img-fluid rounded-circle people-suggestion-img" alt="">
+										<div style="margin-left: 4rem;">Satyam fauzdar  &bull; <span class="badge badge-secondary float-right">followers <span class="badge badge-primary">4 </span></span> </div>
+										<div class="text-muted" style="margin-left: 4rem;font-size: small;">Sr. Developer  <button class="badge badge-dark text-light float-right">follow </button></div>
+									</div>
+                                <div class="mb-3 item-hl btn btn-light">
+                                    <img src="img/temp.jpg"  class="img-fluid rounded-circle people-suggestion-img" alt="">
+                                    <div style="margin-left: 4rem;">Satyam fauzdar  &bull; <span class="badge badge-secondary float-right">followers <span class="badge badge-primary">4 </span></span> </div>
+                                    <div class="text-muted" style="margin-left: 4rem;font-size: small;">Sr. Developer  <button class="badge badge-dark text-light float-right">follow </button></div>
+                                </div>
+                                <div class="mb-3 item-hl btn btn-light">
+                                    <img src="img/temp.jpg"  class="img-fluid rounded-circle people-suggestion-img" alt="">
+                                    <div style="margin-left: 4rem;">Satyam fauzdar  &bull; <span class="badge badge-secondary float-right">followers <span class="badge badge-primary">4 </span></span> </div>
+                                    <div class="text-muted" style="margin-left: 4rem;font-size: small;">Sr. Developer  <button class="badge badge-dark text-light float-right">follow </button></div>
+                                </div>
+                                <div class="mb-3 item-hl btn btn-light">
+                                    <img src="img/temp.jpg"  class="img-fluid rounded-circle people-suggestion-img" alt="">
+                                    <div style="margin-left: 4rem;">Satyam fauzdar  &bull; <span class="badge badge-secondary float-right">followers <span class="badge badge-primary">4 </span></span> </div>
+                                    <div class="text-muted" style="margin-left: 4rem;font-size: small;">Sr. Developer  <button class="badge badge-dark text-light float-right">follow </button></div>
+                                </div>
+                                <div class="mb-3 item-hl btn btn-light">
+                                    <img src="img/temp.jpg"  class="img-fluid rounded-circle people-suggestion-img" alt="">
+                                    <div style="margin-left: 4rem;">Satyam fauzdar  &bull; <span class="badge badge-secondary float-right">followers <span class="badge badge-primary">4 </span></span> </div>
+                                    <div class="text-muted" style="margin-left: 4rem;font-size: small;">Sr. Developer  <button class="badge badge-dark text-light float-right">follow </button></div>
+                                </div>
+
+
+                                <div class="item-hl text-muted ">Questions you might like to answer</div>
+                                <!--questions cards-->
+                                <button class="card btn btn-light mb-2">
+                                    <a href="" class="p-2">
+                                        Lorem ipsum, dolor sit amet consectetur...
+                                    </a>
+                                    <div class=" text-muted p-1">
+                                        <div class="float-right">- sam rolla &bull; 2.5k views &bull;  1hr ago </div>
+                                    </div>
+                                  </button>
+                                  <button class="card btn btn-light mb-2">
+                                    <a href="" class="p-2">
+                                        Lorem ipsum, dolor sit amet consectetur...
+                                    </a>
+                                    <div class=" text-muted p-1">
+                                        <div class="float-right">- sam rolla &bull; 2.5k views &bull;  1hr ago </div>
+                                    </div>
+                                  </button>
+                                  <button class="card btn btn-light mb-2">
+                                    <a href="" class="p-2">
+                                        Lorem ipsum, dolor sit amet consectetur...
+                                    </a>
+                                    <div class=" text-muted p-1">
+                                        <div class="float-right">- sam rolla &bull; 2.5k views &bull;  1hr ago </div>
+                                    </div>
+                                  </button>
+
+
+                                      </div>
+                                    </div>
+                                </div>
+                               </div>
+                            </div>
+
+                        </div>
+
+
+          </section>
+
+{% endblock content %}

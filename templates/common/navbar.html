@@ -22,10 +22,14 @@
                 <a href="{% url 'questions'%}" class="nav-link">Questions</a>
               </li>
   {% if request.user.is_authenticated %}
+              <li class="ml-md-3">
+                <a href="{% url 'profile' %}">    <img class="nav-user-img shadow" src="{% static 'img/avatar/avatar5.png' %}" alt="">  </a>
+              </li>
               <li class="nav-item">
                 {# <a href="login.html" class="nav-link text-primary"  data-toggle="modal" data-target="#login">login</a> #}
                 <a href="{% url 'logout'%}" class="nav-link text-primary">Logout</a>
               </li>
+
   {% else %}
               <li class="nav-item">
                 <a href="login.html" class="nav-link text-primary"  data-toggle="modal" data-target="#login">login</a>

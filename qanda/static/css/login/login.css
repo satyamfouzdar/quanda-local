@@ -1,0 +1,40 @@
+#login-section {
+  background: url(../../img/banner2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 705px;
+
+}
+#login-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 705px;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 46px;
+}
+#login-section .dark-overlay .row {
+  margin-top : 60px;
+}
+
+
+#login-section i {
+  margin-top: -100px; }
+
+
+#login-section .card {
+  background: rgba(255,255,153,0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  transform: translate(-50%,-50%);
+}
+#login-section .card-form{
+  opacity: 0.9;
+}
+
+body {
+  margin-top: 45px; }
