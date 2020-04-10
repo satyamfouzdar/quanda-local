@@ -1,31 +1,69 @@
-
-.profile-background-image--loading {
-    margin-top: 2rem;
-    background: url("../../img/profile-bg.jpg") 50%/cover;
+#profile-background{
+    position: absolute;
+    background: url('../../img/banner-background2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+#profile-card{
+    background-color: rgba(0, 123, 255, 0.25);
+}
+
 .profile-background-image {
-    position: relative;
+    position: inherit;
+    margin-top: 2rem;
+    background: url("../../img/banner6.jpg") 50%/cover    ;
     width: 100%;
-    padding-bottom: 25%;
 
 }
+.dark-overlay {
+    position: relative;
+    min-height: 200px;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
 #authors-details img {
     float: right;
-    margin-top: -10%;
-    margin-right: 10%;
-    width: 15vw;
-    height: 15vw;
-
+    margin-top: -25%;
+    align-self: center;
+    width: 10vw;
+    height: 10vw;
     border: gray solid;
 
 }
-#authors-details .card:hover {
-    background: #3292a6;
-    color: #fff;
+#right-side-profile .person-hover {
+    background:  rgba(0, 123, 255, 0.25);
+    color: rgb(102, 100, 100);
 }
+#right-side-profile .person-hover:hover {
+    background: rgb(0, 204, 255);
+    color: rgb(0, 0, 0);
+}
+#info-card .col:hover {
+    border-bottom: rgb(0, 204, 255) 2px solid;
+    cursor: pointer;
+}
+#info-card .col{
+    background-color: #6c757d30;
+}
+
+
 #authors-details .fab {
     color: #fff;
  }
+
+.no-padding-right{
+    padding-right: 0px;
+}
+.no-padding-left{
+    padding-left: 0px;
+}
+
+#info-card .boader-left{
+    border-left: black;
+}
+
 
  .f-3{
      font-size: 3rem;
@@ -47,6 +85,9 @@
     font-size: .5rem;
     /*font-size: .5vw;
    */
+}
+.f-_75{
+    font-size: .75rem;
 }
  .profile-details{
      margin-left: 1rem;
@@ -73,14 +114,36 @@
  }
 
 
+@media(max-width: 768px){
+    /* body{
+        background-color: chartreuse;
+    } */
+    .profile-details{
+        margin-left: 0rem;
+    }
+    #authors-details img {
 
+        margin-top: 0.5rem;
+        align-self: right;
+        width: 10vw;
+        height: 10vw;
+        border: gray solid;
+
+    }
+    #profile-card .card-body{
+        padding-top: 0;
+    }
+    #profile-card{
+        background-color: rgba(0, 123, 255, 0.25);
+    }
+}
 
  /* Small devices (landscape phones) */
 @media (min-width: 576px) {
- /*   body {
+   /* body {
             background: red;
-        }
-*/
+        } */
+
     .custom-container-profile{
         margin-left: 0rem;
         padding: 0rem;
@@ -94,6 +157,7 @@
             background: blue
         }
       */
+
         .custom-container-profile{
             margin-left: 0rem;
             padding: 0rem;
@@ -119,6 +183,9 @@
            /*font-size: .5vw;
           */
        }
+       .f-_75{
+        font-size: .75rem;
+    }
 
     }
 
@@ -171,7 +238,7 @@
 
        }
        .f-1{
-           font-size: .5rem;
+           font-size: .75rem;
 
        }
        .f-1_5{
@@ -183,5 +250,7 @@
            /*font-size: .5vw;
           */
        }
-
+       .f-_75{
+        font-size: .65rem;
+    }
     }
