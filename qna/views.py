@@ -40,5 +40,4 @@ def tagged(request, slug):
         'common_tags':common_tags,
         'questions': questions,
     }
-    print(tag,questions)
     return render(request, 'qna/questions.html', context)
