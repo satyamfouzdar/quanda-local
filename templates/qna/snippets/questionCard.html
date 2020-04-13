@@ -24,7 +24,14 @@
               <a href="{% url 'tags' tag.slug %}" class="mr-2 mb-2 badge badge-info"><i class="fas fa-tag"> {{ tag }}</i></a>
             {% endfor %}
           </div>
-          <a href="#" class="btn btn-primary btn-sm btn-block mt-3">See full details</a>
+          <div class="row">
+            <div class="col">
+              <a href="#" class="btn btn-outline-success btn-sm btn-block mt-3">Add Answer</a>
+            </div>
+            <div class="col">
+              <a href="#  " class="btn btn-primary btn-sm btn-block mt-3">See full details</a>
+            </div>
+          </div>
         </div>
         <blockquote class="blockquote text-right"></p>
           <footer class="blockquote-footer" style="font-size: 0.75rem;">Posted By
