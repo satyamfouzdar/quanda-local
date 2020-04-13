@@ -1,5 +1,6 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from . import models
+from . import forms
 from django.contrib.auth.decorators import login_required
 from taggit.models import Tag
 
@@ -30,6 +31,7 @@ def latestquestions(request):
     }
     return render(request, 'qna/latest-questions.html', context)
 
+
 @login_required
 def tagged(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
@@ -41,3 +43,23 @@ def tagged(request, slug):
         'questions': questions,
     }
     return render(request, 'qna/questions.html', context)
+
+
+@login_required
+def addquestion(request):
+
+    if request.method == "POST":
+        form = forms.QuestionForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.author = request.user
+            form.save()
+            return redirect('questions')
+    else:
+        form = forms.QuestionForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'qna/addquestion.html', context)
