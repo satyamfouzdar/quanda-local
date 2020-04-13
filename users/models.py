@@ -1,6 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.utils.translation import ugettext_lazy as _
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
+ROLES_CHOICES = (
+    ('student', 'Student'),
+    ('teacher',  'Teacher'),
+    ('freelancer', 'Freelancer'),
+    ('working-professional', 'Working Professional'),)
 
 
 class MyUserManager(BaseUserManager):
@@ -58,3 +67,22 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         return self.email
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.CharField(max_length=255, default="Hey there! I am using Askub")
+    profile_picture = models.ImageField(upload_to="profiles/", blank=True)
+    current_role = models.CharField(max_length=155, choices=ROLES_CHOICES, blank=True)
+    working_at = models.CharField(max_length=155, blank=True)
+    city = models.CharField(max_length=155, blank=True)
+    country = models.CharField(max_length=150, default="India")
+
+    def __str__(self):
+        return self.user.first_name + self.user.last_name
+
+@receiver(post_save, sender=User)
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()

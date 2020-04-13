@@ -1,7 +1,8 @@
 from django.contrib.auth import login, authenticate
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .forms import SignUpForm
+from . import models
 
 
 def signup(request):
@@ -13,7 +14,6 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(email=email, password=raw_password)
             login(request, user)
-
             return redirect('homepage')
 
     else:
@@ -22,5 +22,9 @@ def signup(request):
     return render(request, "registration/signup.html", {'form': form})
 
 def profile(request):
-
-    return render(request, 'users/profile.html', {})
+    user = request.user
+    profile = get_object_or_404(models.Profile, user=user)
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'users/profile.html', context)
