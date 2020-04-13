@@ -7,5 +7,6 @@ urlpatterns = [
     path('latestquestions/', views.latestquestions, name="latestquestions"),
     path('questions/tag/<slug:slug>',views.tagged,name='tags'),
     path('addquestion/', views.addquestion, name="addquestion"),
+    path('question/<int:pk>', views.question_detail, name="question-detail"),
 ]
 

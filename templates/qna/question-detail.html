@@ -12,14 +12,15 @@
       {% include 'sidebar.html'%}
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Your Questions</h1>
-            <div class="container-fluid">
-                <form action="." method="POST">
-                    {% csrf_token %}
-                    {% bootstrap_form form layout='inline'%}
-                    <button type="submit" class="btn btn-primary">Add</button>
-                </form>
-            </div>
+            <h1>{{question.title}}</h1>
+            <h3>Added by: {{ question.author }}</h3>
+            <p>Added on: {{ question.created_at }}</p>
+            <hr>
+            <p>{{ question.description }}</p>
+            <hr>
+            <p>{{ question.code|linebreaks }}</p>
+            <hr>
+            <h2>Answers</h2>
         </div>
       </main>
     </div>

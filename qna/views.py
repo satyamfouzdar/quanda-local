@@ -63,3 +63,13 @@ def addquestion(request):
     }
 
     return render(request, 'qna/addquestion.html', context)
+
+
+@login_required
+def question_detail(request, pk):
+
+    question = get_object_or_404(models.Question, id=pk)
+    context = {
+        'question': question,
+    }
+    return render(request, "qna/question-detail.html", context)
