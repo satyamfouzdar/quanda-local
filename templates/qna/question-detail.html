@@ -8,27 +8,46 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
-      {% include 'sidebar.html'%}
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1>{{question.title}}</h1>
-            <h3>Added by: {{ question.author }}</h3>
-            <p>Added on: {{ question.created_at }}</p>
-            <hr>
-            <p>{{ question.description }}</p>
-            <hr>
-            <p>{{ question.code|linebreaks }}</p>
-            <hr>
-            <h2>Answers</h2>
+  <div class="row">
+    {% include 'sidebar.html'%}
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
+        <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+              <h1>{{question.title}}</h1>
+              <blockquote class="row">
+                <div>Added by: {{ question.author }}</div>
+                <div>Added on: {{ question.created_at }}</div>
+              </blockquote>
+        </div> -->
+        <div class="row my-3">
+          <h1 class="f-2_5">{{question.title}}</h1>
         </div>
-      </main>
-    </div>
+        <div class="row">
+          <div class="text-muted f-_75">Added by:</div> <span class="text-info f-_75">&nbsp;{{ question.author }}</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="text-muted f-_75">Added on:</div> <span class="text-info f-_75">&nbsp;{{ question.created_at }}</span>
+        </div>
+        <div class="border-bottom mt-1 mb-3"></div>
+        <div class="row">
+          <p class="f-1">{{ question.description }}</p>
+        </div>
+        <div class="row card-body bg-light">
+          <p class="f-1">{{ question.code|linebreaks }}</p>
+        </div>
+        <div class="border-bottom my-4"></div>
+        <div class="row">
+          <h2 class="f-2">(<span class="text-muted f-1_5">9</span>) Answers</h2>
+        </div>
+        <div class="row">
+          <div class="row">
+            <div class="col-md-11 offset-md-1">
+              <p>hi this is my text and it may go beyound the normal vondary and i dont know what am i writing and this is great and working</p>
+              <div class="row ml-2 card-body bg-light">
+                  hi this is my text and it may go beyound the normal vondary and i dont know what am i writing
+              </div>
+            </div>
+          </div>
+        </div>
+    </main>
   </div>
+</div>
 {% endblock %}
-{% block js %}
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
-<script src="{% static 'js/vote.js' %}"></script>
-{% endblock js %}
