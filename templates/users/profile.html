@@ -24,7 +24,7 @@
                     <img src="{% static 'img/avatar/avatar.png' %}" alt="" class="img-fluid rounded-circle "/>
                     <div class="profile-details">
                         <div class="card-body">
-                            <div class="f-2">Sagar Pandey</div>
+                            <div class="f-2">{{ profile.user.first_name}} {{ profile.user.last_name}}</div>
                             <p class="text-muted">@sagarRock</p>
                             <p class="f-1"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore fuga, aut doloribus facilis fugiat officiis ipsa quod aliquam mollitia! Deleniti, soluta quasi? Quam blanditiis suscipit vero harum voluptas iure ut!</p>
 
@@ -78,36 +78,8 @@
                     </div>
                 </div>
 
-                <!-- your dashboard card -->
-                <div id="authors-dashboard" class=" no-gutters">
-                    <div class="card shadow my-2">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active f-1" id="questions-tab" data-toggle="tab" href="#questions" role="tab" aria-controls="questions" aria-selected="true">My Questions</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link f-1" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">My Answers</a>
-                                </li>
 
-                            </ul>
-                        </div>
 
-                        <div class="tab-content card-body" id="myTabContent">
-                            <div class="tab-pane fade show active f-1" id="questions" role="tabpanel" aria-labelledby="questions-tab">
-
-                                {% include "qna/snippets/questionCard.html" with instance=instance %}
-                            </div>
-                            <div class="tab-pane fade f-1" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                Answer Card will be attached here
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-            <!--./ col -->
             </div>
         </div>
     </div>
