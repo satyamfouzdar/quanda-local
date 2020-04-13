@@ -86,6 +86,34 @@ body {
 #main-footer .copy-right {
   font-size: 10px; }
 
+
+  .f-3{
+      font-size: 3rem;
+
+  }
+  .f-2{
+     font-size: 2rem;
+
+ }
+ .f-1{
+     font-size: 1rem;
+
+ }
+ .f-1_5{
+     font-size: 1.5rem;
+ }
+ .f-1_1{
+   font-size: 1.1rem;
+ }
+ .f-_5{
+     font-size: .5rem;
+     /*font-size: .5vw;
+    */
+ }
+ .f-_75{
+     font-size: .75rem;
+ }
+
 @media (max-width: 768px) {
   #main-nav .font-custom {
     font-size: 14px; }
@@ -116,3 +144,86 @@ body {
 @media (min-width: 996px) {
   #main-nav .form-inline {
     box-sizing: inherit; } }
+
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) {
+/* body {
+      background: blue
+  }
+*/
+
+  .custom-container-profile{
+      margin-left: 0rem;
+      padding: 0rem;
+  }
+  .f-3{
+      font-size: 2.5rem;
+
+  }
+  .f-2{
+     font-size: 1.5rem;
+
+ }
+ .f-1{
+     font-size: 1rem;
+
+ }
+ .f-1_5{
+     font-size: 1rem;
+
+ }
+ .f-1_1{
+   font-size: 1.1rem;
+ }
+ .f-_5{
+     font-size: .5rem;
+     /*font-size: .5vw;
+    */
+ }
+ .f-_75{
+  font-size: .75rem;
+}
+
+}
+
+
+/* Extra small devices (portrait phones)*/
+
+@media (max-width: 575px) {
+/*     body {
+        background: coral;
+    }
+
+*/    .custom-container-profile{
+        margin-left: 0rem;
+        padding: 0rem;
+    }
+    .f-3{
+        font-size: 2rem;
+
+    }
+    .f-2{
+       font-size: 1rem;
+
+   }
+   .f-1{
+       font-size: .75rem;
+
+   }
+   .f-1_5{
+       font-size: 1rem;
+
+   }
+   .f-1_1{
+     font-size: 1.1rem;
+   }
+   .f-_5{
+       font-size: .5rem;
+       /*font-size: .5vw;
+      */
+   }
+   .f-_75{
+    font-size: .65rem;
+}
+}

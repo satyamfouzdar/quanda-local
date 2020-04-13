@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'qna',
     'bootstrap4',
+    'taggit'
 ]
 
 MIDDLEWARE = [

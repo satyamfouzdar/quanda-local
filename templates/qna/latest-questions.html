@@ -7,8 +7,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
-      {% include 'sidebar.html'%}
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      {% include 'sidebar.html' with query_count=query_count%}
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Latest Questions</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
@@ -22,6 +22,7 @@
             </button>
           </div>
         </div>
+        {% include "qna/snippets/common_tags.html" with common_tags=common_tags %}
         <div class="container-fluid">
           {% for question in questions %}
           {% include "qna/snippets/questionCard.html" with instance=question %}
@@ -31,9 +32,3 @@
     </div>
   </div>
 {% endblock %}
-{% block js %}
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
-<script src="{% static 'js/vote.js' %}"></script>
-{% endblock js %}

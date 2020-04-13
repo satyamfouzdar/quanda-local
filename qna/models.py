@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from taggit.managers import TaggableManager
 from users.models import User
 
 
@@ -10,7 +10,7 @@ class Question(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(editable=False)
     modified_at = models.DateTimeField()
-
+    tags =  TaggableManager()
     def save(self, *args, **kwargs):
         if not self.id:
             self.created_at = timezone.now()

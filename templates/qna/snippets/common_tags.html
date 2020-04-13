@@ -1,0 +1,8 @@
+<div class="border-bottom">
+  <h6>
+    Common tags :
+      {% for tag in common_tags %}
+          <a href="{% url 'tags' slug=tag%}" class="badge badge-secondary"><i class="fas fa-tag">  {{tag}}</i></a>
+      {% endfor %}
+  </h6>
+</div>
