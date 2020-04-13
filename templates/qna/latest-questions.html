@@ -1,9 +1,5 @@
 {% extends 'base.html' %}
 {% block title %}Questions | {{ block.super }}{% endblock %}
-{% load static %}
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/qanda/style.css' %}">
-{% endblock css %}
 {% block content %}
 <div class="container-fluid">
     <div class="row">
@@ -31,9 +27,3 @@
     </div>
   </div>
 {% endblock %}
-{% block js %}
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-
-<script src="{% static 'js/vote.js' %}"></script>
-{% endblock js %}
