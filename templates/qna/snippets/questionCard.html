@@ -1,39 +1,37 @@
-<div class="card shadow">
-
-    <div class="card-header bg-light">
-        {{ instance.author | title}}
-      <!-- <a href="#" class="badge badge-primary"><span class=" badge badge-pill badge-dark">12</span> Vote</a>
-      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span> Answers</a>
-      <a href="#" class="badge badge-primary"><span class="badge badge-pill badge-dark">12</span>Views</a> -->
-
-      <div class="float-right d-inline">
-        <span class="text-muted" style="font-size: small;"> created on  {{ instance.created_at|date:"D d M Y" }} || {{ instance.created_at|time:"g:i a" }} || {{instance.created_at|timesince}} ago </span>
+<div class="card shadow my-3">
+  <div class="card-header f-1" style="background-color: rgba(0, 123, 255, 0.25) !important;">
+        {{ instance.author | title }}
+        <div class="float-right d-inline ">
+          <span class="text-muted " style="font-size: 0.75rem;"> created on   {{ instance.created_at|time:"g:i a" }} || {{instance.created_at|timesince}} ago </span>
+        </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-xl-1 col-md-2 col-sm-2 col-xs-2  pr-1 d-none d-sm-block ">
+        <div class="card-text text-center f-1">
+            Answers
+        </div>
+        <div class="box text-center f-1 text-info ">
+            0
+        </div>
       </div>
-
-    </div>
-      <div class="card-body">
-  <div class="row">
-    <div class="col-xl-1 col-md-1 col-sm-1 col-xs-1  pr-1">
-      <div id="vote">
-      </div>
-
-    </div>
-
-
-    <div class="col-xl-11 col-md-11 col-sm-11 col-xs-11">
-
-
-
-            <h5 class="card-title">{{ instance.title| truncatechars:60 }}</h5>
-            <p class="card-text">{{ instance.description | truncatechars:180 }}</p>
-            <a href="#" class="btn btn-primary mt-3 stretched-link">See full details</a>
-            <blockquote class="blockquote text-right"></p>
-            <footer class="blockquote-footer" style="font-size: small;">Posted By
-              <cite title="Source Title">  {{ instance.author }}</cite>
-            </footer>
-          </blockquote>
+      <div class="col-xl-11 col-md-10 col-sm-10 col-xs-10">
+        <div class="card-title f-1_1">Q: {{ instance.title| truncatechars:60 |capfirst}}</div>
+        <div class="container">
+          <p class="card-text f-_75">{{ instance.description | truncatechars:180 |capfirst}}</p>
+          <div class="d-flex flex-wrap row-hl mt-3">
+            {% for tag in instance.tags.all %}
+              <a href="{% url 'tags' tag.slug %}" class="mr-2 mb-2 badge badge-info"><i class="fas fa-tag"> {{ tag }}</i></a>
+            {% endfor %}
+          </div>
+          <a href="#" class="btn btn-primary btn-sm btn-block mt-3">See full details</a>
+        </div>
+        <blockquote class="blockquote text-right"></p>
+          <footer class="blockquote-footer" style="font-size: 0.75rem;">Posted By
+            <cite title="Source Title">  {{ instance.author }}</cite>
+          </footer>
+        </blockquote>
       </div>
     </div>
   </div>
-
 </div>
