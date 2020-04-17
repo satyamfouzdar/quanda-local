@@ -40,10 +40,29 @@
           <h2 class="f-2">(<span class="text-muted f-1_5">9</span>) Answers</h2>
         </div>
         <div class="row">
-        {% include "qna/snippets/answer_list_card.html" with instance=instance %}
-          <div class="border-bottom my-4"></div>
-          <a href="#" class="btn btn-outline-success btn-sm btn-block my-3">Add Answer</a>
-          <div class="border-bottom my-4"></div>
+          {% for answer in answers %}
+          <div class="row">
+            <div class="col-md-11 offset-md-1">
+              <p>{{ answer.description }}</p>
+              <div class="row ml-2 card-body bg-light">
+                  {{ answer.code|linebreaks }}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <hr>
+        <div class="container-fluid">
+          <div class="row">
+            <h2>Post Answer</h2>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
+                <form action="{% url 'addanswer' question.id %}" method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form layout='inline'%}
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </main>
+          </div>
         </div>
     </main>
   </div>
