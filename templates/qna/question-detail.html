@@ -38,13 +38,28 @@
           <h2 class="f-2">(<span class="text-muted f-1_5">9</span>) Answers</h2>
         </div>
         <div class="row">
+          {% for answer in answers %}
           <div class="row">
             <div class="col-md-11 offset-md-1">
-              <p>hi this is my text and it may go beyound the normal vondary and i dont know what am i writing and this is great and working</p>
+              <p>{{ answer.description }}</p>
               <div class="row ml-2 card-body bg-light">
-                  hi this is my text and it may go beyound the normal vondary and i dont know what am i writing
+                  {{ answer.code|linebreaks }}
               </div>
             </div>
+          </div>
+          {% endfor %}
+        </div>
+        <hr>
+        <div class="container-fluid">
+          <div class="row">
+            <h2>Post Answer</h2>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
+                <form action="{% url 'addanswer' question.id %}" method="post">
+                    {% csrf_token %}
+                    {% bootstrap_form form layout='inline'%}
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </main>
           </div>
         </div>
     </main>

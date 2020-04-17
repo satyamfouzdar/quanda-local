@@ -11,7 +11,7 @@
   <div class="row">
     {% include 'sidebar.html'%}
     <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4">
-        <form action="{% url 'addanswer' %}" method="post">
+        <form action="." method="post">
             {% csrf_token %}
             {% bootstrap_form form layout='inline'%}
             <button type="submit" class="btn btn-primary">Add</button>
