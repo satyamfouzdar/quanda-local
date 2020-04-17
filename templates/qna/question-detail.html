@@ -34,18 +34,16 @@
           <p class="f-1">{{ question.code|linebreaks }}</p>
         </div>
         <div class="border-bottom my-4"></div>
+        <a href="#" class="btn btn-outline-success btn-sm btn-block mt-3">Add Answer</a>
+        <div class="border-bottom my-4"></div>
         <div class="row">
           <h2 class="f-2">(<span class="text-muted f-1_5">9</span>) Answers</h2>
         </div>
         <div class="row">
-          <div class="row">
-            <div class="col-md-11 offset-md-1">
-              <p>hi this is my text and it may go beyound the normal vondary and i dont know what am i writing and this is great and working</p>
-              <div class="row ml-2 card-body bg-light">
-                  hi this is my text and it may go beyound the normal vondary and i dont know what am i writing
-              </div>
-            </div>
-          </div>
+        {% include "qna/snippets/answer_list_card.html" with instance=instance %}
+          <div class="border-bottom my-4"></div>
+          <a href="#" class="btn btn-outline-success btn-sm btn-block my-3">Add Answer</a>
+          <div class="border-bottom my-4"></div>
         </div>
     </main>
   </div>

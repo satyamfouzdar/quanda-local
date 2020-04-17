@@ -1,0 +1,21 @@
+<!-- answers list card -->
+<div class="row my-3">
+  <div class="col-md-11 offset-md-1">
+    <div class=" row f-1" style="background-color: rgba(0, 123, 255, 0.25) !important;">
+          {{ instance.author | title }}
+          <div class="float-right d-inline ">
+            <span class="text-muted m-1" style="font-size: 0.75rem;">{{ instance.created_at|time:"g:i a" }} || {{instance.created_at|timesince}} ago </span>
+          </div>
+    </div>
+    <p>hi this is my text and it may go beyound the normal vondary and i dont know what am i writing and this is great and working</p>
+    <div class="row ml-2 card-body bg-light">
+        hi this is my text and it may go beyound the normal vondary and i dont know what am i writing
+    </div>
+    <blockquote class="blockquote text-right"></p>
+      <footer class="blockquote-footer" style="font-size: 0.75rem;">Posted By
+        <cite title="Source Title">  {{ instance.author }}</cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+<!-- ./answers list card -->
