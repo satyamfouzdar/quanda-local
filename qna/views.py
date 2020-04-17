@@ -51,9 +51,10 @@ def addquestion(request):
     if request.method == "POST":
         form = forms.QuestionForm(request.POST)
         if form.is_valid():
-            form = form.save(commit=False)
-            form.author = request.user
-            form.save()
+            obj = form.save(commit=False)
+            obj.author = request.user
+            obj.save()
+            form.save_m2m()
             return redirect('questions')
     else:
         form = forms.QuestionForm()
