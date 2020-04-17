@@ -73,3 +73,24 @@ def question_detail(request, pk):
         'question': question,
     }
     return render(request, "qna/question-detail.html", context)
+
+
+@login_required
+def add_answer(request, q_id):
+
+    if request.method == "POST":
+        form = forms.AnswerForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.author = request.user
+            form.question = models.Question.objects.get(id=q_id)
+            form.save()
+            return redirect('latest-questions')
+    else:
+        form = forms.AnswerForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'qna/add-answer.html', context)
